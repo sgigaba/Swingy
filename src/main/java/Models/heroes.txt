@@ -1,0 +1,3 @@
+Lwazi Ripper, Knight, 20, 35, Sword
+Jack Viper, Elf, 21, 56, Knife
+Meva Junior, Warrior, 23, 56, Hammer
