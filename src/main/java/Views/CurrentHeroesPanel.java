@@ -1,6 +1,7 @@
 package Views;
 
 import Controllers.CurrentHeroesController;
+import Controllers.HeroController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,10 +16,11 @@ public class CurrentHeroesPanel {
     JPanel panel;
     CurrentHeroesController currentHeroes = new CurrentHeroesController();
     List<CurrentHeroesController> ListofCurrentHeroes = new ArrayList<>();
+    int listener = 0;
 
     public CurrentHeroesPanel(){ }
 
-    public JPanel getPanel(){
+    public void generatepanel(){
         currentHeroes.getCurrentHeroesList();
         ListofCurrentHeroes = currentHeroes.getListofCurrent();
         panel = new JPanel(new GridLayout(ListofCurrentHeroes.size(), 1));
@@ -30,22 +32,32 @@ public class CurrentHeroesPanel {
             HeroButton.setFont(new Font("Arial", Font.BOLD, 25));
             HeroButton.setForeground(Color.BLACK);
             panel.add(HeroButton);
-            HeroButton.setActionCommand(ListofCurrentHeroes.get(i).getHeroName());
+            HeroButton.setActionCommand(Integer.toString(i));
             HeroButton.addActionListener(new CurrentHeroesListener());
         }
+        System.out.print("out");
+    }
+
+    public JPanel getPanel(){
         return this.panel;
     }
 
     public class CurrentHeroesListener implements ActionListener {
         public void actionPerformed(ActionEvent e){
+            listener++;
             String command = e.getActionCommand();
-
-            for(int i = 0; i < ListofCurrentHeroes.size(); i++){
-
-                if (command.equals(ListofCurrentHeroes.get(i).getHeroName())){
-                    System.out.println("Player wants : "+ ListofCurrentHeroes.get(i).getHeroName());
-                }
-            }
+            System.out.print(ListofCurrentHeroes.get(Integer.parseInt(command)).getHeroName());
+            HeroController newHero = HeroController.getNewHero();
+            newHero.setName(ListofCurrentHeroes.get(Integer.parseInt(command)).getHeroName());
+            newHero.setClass(ListofCurrentHeroes.get(Integer.parseInt(command)).getHeroName());
+            newHero.setLevel(1);
+            newHero.setAttack(10);
+            newHero.setDefense(30);
+            newHero.setHitPoints(5);
+            newHero.setLevel(1);
+            newHero.setXp(newHero.getLevel());
+            MainWindow mainWindow = MainWindow.getMainWindow();
+            mainWindow.displayGamePanel();
         }
     }
 }

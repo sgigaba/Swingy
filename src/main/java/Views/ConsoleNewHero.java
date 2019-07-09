@@ -21,8 +21,8 @@ public class ConsoleNewHero {
          hero.setAttack(10);
          hero.setDefense(30);
          hero.setHitPoints(5);
-         hero.setLevel(3);
-         hero.setXp(0);
+         hero.setLevel(1);
+         hero.setXp(hero.getLevel());
          ConsoleGameView startGame = new ConsoleGameView();
         }
     }

@@ -3,8 +3,11 @@ Views/CurrentHeroesPanel$CurrentHeroesListener.class
 Views/ConsoleGameView.class
 Views/ConsoleCurrentHeroes.class
 Views/ConsoleView.class
+Models/GameModel.class
+Views/GuiGameView.class
 Views/ConsoleNewHero.class
 Models/Hero.class
+Models/Enemies.class
 Controllers/HeroController.class
 Views/DisplayHeroPanel.class
 Views/StartupPanel.class
@@ -13,6 +16,7 @@ Controllers/CurrentHeroesController.class
 Views/MainWindow.class
 Main.class
 Views/NewHeroPanel.class
+Models/Artefacts.class
 Views/CurrentHeroesPanel.class
 Controllers/GameController.class
 Views/MainFrame.class

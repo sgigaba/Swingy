@@ -1,15 +1,15 @@
 package Controllers;
 import Models.*;
 
-import javax.validation.Validator;
-import javax.validation.constraints.*;
+//import javax.validation.Validator;
+//import javax.validation.constraints.*;
 
 
 public class HeroController {
 
-    private static Validator validator;
-
-    @Size(max=10, min = 5, message = "Name must be betweenn 5 and 10 characters")
+//    private static Validator validator;
+//
+//    @Size(max=10, min = 5, message = "Name must be betweenn 5 and 10 characters")
     private String HeroName;
     private static String HeroClass;
     private static int    HeroLevel;
@@ -36,7 +36,6 @@ public class HeroController {
     }
 
     public void BuildHero(){
-
     HeroBuilder heroBuilder = new HeroBuilder();
     heroBuilder.setAttack(this.HeroAttack).setName(HeroName).setClass(this.HeroClass)
             .setXp(this.HeroXp).setDefense(this.HeroDefense).setHitPoints(this.HeroHitPoints).setLevel(this.HeroLevel);
@@ -55,7 +54,8 @@ public class HeroController {
         this.HeroLevel = level;
     }
 
-    public void setXp(int xp){
+    public void setXp(int level){
+        int xp = level * 1000 + ((level - 1) * (level - 1)) * 450;
         this.HeroXp = xp;
     }
 

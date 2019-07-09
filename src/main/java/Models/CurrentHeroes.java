@@ -18,7 +18,7 @@ public class CurrentHeroes {
 
     public void readFile(){
 
-        file = new File("/goinfre/sgigaba/IdeaProjects/Swingy/src/main/java/Models/heroes.txt");
+        file = new File("/goinfre/sgigaba/IdeaProjects/Swingy/Swingy/src/main/java/Models/heroes.txt");
         try{
             BufferedReader textfile = new BufferedReader(new FileReader(file));
             try{

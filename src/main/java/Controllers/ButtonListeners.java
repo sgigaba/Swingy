@@ -9,7 +9,7 @@ public class ButtonListeners implements ActionListener{
 
     public void actionPerformed(ActionEvent e){
         String command = e.getActionCommand();
-        MainWindow window = new MainWindow();
+        MainWindow window = MainWindow.getMainWindow();
         if (command.equals("New Hero")){
             window.newHero();
             System.out.println("New Hero");

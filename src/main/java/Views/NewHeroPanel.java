@@ -18,11 +18,12 @@ public class NewHeroPanel {
 
     HeroController newHero = HeroController.getNewHero();
 
+
     public NewHeroPanel(){
 
     }
 
-    public JPanel getPanel() {
+    public void generatePanel(){
         panel.setBounds(0, 0, 400, 200);
 
         panel.add(label);
@@ -36,6 +37,10 @@ public class NewHeroPanel {
         inputClass.addActionListener(new newHeroListener());
         createNewHero.setActionCommand("create hero");
         createNewHero.addActionListener(new newHeroListener());
+    }
+
+    public JPanel getPanel() {
+
         return panel;
     }
 
@@ -57,8 +62,8 @@ public class NewHeroPanel {
                 newHero.setHitPoints(100);
                 newHero.BuildHero();
                 System.out.print(newHero.getName());
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.displayHero();
+                MainWindow mainWindow = MainWindow.getMainWindow();
+                mainWindow.displayGame();
             }
         }
     }

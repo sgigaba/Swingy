@@ -17,7 +17,7 @@ public class Main {
                 ConsoleView consoleView = new ConsoleView();
             }
             else if (gametype.contains("gui")){
-                MainWindow mainwindow = new MainWindow();
+                MainWindow mainwindow = MainWindow.getMainWindow();
                 mainwindow.StartUpWindow();
             }
         }

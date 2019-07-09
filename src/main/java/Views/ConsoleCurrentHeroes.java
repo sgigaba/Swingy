@@ -37,7 +37,7 @@ public class ConsoleCurrentHeroes {
                 hero.setDefense(30);
                 hero.setHitPoints(5);
                 hero.setLevel(1);
-                hero.setXp(0);
+                hero.setXp(hero.getLevel());
                 ConsoleGameView startGame = new ConsoleGameView();
                 return;
             }
